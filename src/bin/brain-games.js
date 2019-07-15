@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import enterName from '../index.js';
+import {questionName} from '../index.js';
 
-enterName();
+questionName();
