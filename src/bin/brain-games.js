@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import {questionName} from '../index.js';
+import {gameOne} from '../index.js';
 
-questionName();
+gameOne();
