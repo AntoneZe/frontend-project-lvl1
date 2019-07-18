@@ -83,3 +83,35 @@ export const game3 = () => {
 		}
 		return iter(0);
 };
+
+
+/////////////////////////////////////////////game3/////////////////////////////////////////////////////
+
+const nod = (x,y) => {
+  if (x !== 0) {
+    return nod(y%x,x);
+  } else {
+    return y;
+  }
+};
+
+export const game4 = () =>{
+ const userName = questionName();
+ console.log("Find the greatest common divisor of given numbers.");
+ const iter = (counter) => {
+   if (counter === 3) {
+     return console.log(`Congratulations, ${userName}!`);
+   }
+ const numberA = randomInteger(0,100);
+ const numberB = randomInteger(0,100);
+ const result = nod(numberA,numberB);
+ console.log(`Question: ${numberA} ${numberB}`);
+ const answer = readlineSync.question('Your answer:');
+   if (answer == result) {
+   console.log('Correct!');
+   return iter(counter+1);
+   }
+   else return console.log(`${answer} is wrong answer ;(. Correct answer was ${result}. \nLet's try again, ${userName}!`);
+   }
+   return iter(0);
+};

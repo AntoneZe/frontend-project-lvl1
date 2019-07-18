@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "bin": {
+    "brain-gcd": "dist/bin/game/brain-gcd.js",
     "brain-games": "dist/bin/brain-games.js",
     "brain-calc": "dist/bin/game/brain-calc.js",
     "brain-even": "dist/bin/game/brain-even.js"
