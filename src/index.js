@@ -115,3 +115,48 @@ export const game4 = () =>{
    }
    return iter(0);
 };
+
+
+
+/////////////////////////////////////////////game4/////////////////////////////////////////////////////
+
+
+export const game5 = () =>{
+ const userName = questionName();
+ console.log("What number is missing in the progression?");
+ const iter = (counter) => {
+   if (counter === 3) {
+     return console.log(`Congratulations, ${userName}!`);
+   }
+   const brainpProgression = () => {
+      const numberC = randomInteger(0,9);
+      const massivGen = () => {
+        const numberA = randomInteger(1,100);
+        const numberB = randomInteger(1,10);
+        var numberD = numberA;
+        var arr = [numberA];
+        for(var i = 0; i <= 8; i++) {
+          numberD += numberB;
+          arr.push(numberD);
+        }
+        return arr;
+      };
+      const raundArray = massivGen();
+      const result = raundArray[numberC];
+      raundArray[numberC] = "..";
+console.log(`Question: ${raundArray.join(" ")}`);
+const answer = readlineSync.question('Your answer:');
+if (answer == result) {
+  return true;
+} else {
+console.log(`${answer} is wrong answer ;(. Correct answer was ${result}. \nLet's try again, ${userName}!`);
+return false;
+}
+};
+   if (brainpProgression()) {
+   console.log('Correct!');
+   return iter(counter+1);
+   }
+   }
+   return iter(0);
+};
