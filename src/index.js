@@ -72,10 +72,10 @@ export const brainCalc = () => {
       return console.log(`Congratulations, ${userName}!`);
     }
   const thisGameOperator = randomOperators(randomInteger(0,2));
-  const numberA = randomInteger(0,100);
-	const numberB = randomInteger(0,100);
-  const thisRaund =  `${numberA} ${thisGameOperator} ${numberB}`;
-  const result = result(numberA,numberB,thisGameOperator);
+  const randomNumberOne = randomInteger(0,100);
+	const randomNumberTwo = randomInteger(0,100);
+  const thisRaund =  `${randomNumberOne} ${thisGameOperator} ${randomNumberTwo}`;
+  const result = result(randomNumberOne,randomNumberTwo,thisGameOperator);
   console.log(`Question: ${thisRaund}?`);
   const answer = readlineSync.question('Your answer:');
 		if(answer == result) {
@@ -105,10 +105,10 @@ export const brainGcd = () =>{
    if (counter === 3) {
      return console.log(`Congratulations, ${userName}!`);
    }
- const numberA = randomInteger(0,100);
- const numberB = randomInteger(0,100);
- const result = gcd(numberA,numberB);
- console.log(`Question: ${numberA} ${numberB}`);
+ const randomNumberOne = randomInteger(0,100);
+ const randomNumberTwo = randomInteger(0,100);
+ const result = gcd(randomNumberOne,randomNumberTwo);
+ console.log(`Question: ${randomNumberOne} ${randomNumberTwo}`);
  const answer = readlineSync.question('Your answer:');
    if (answer == result) {
    console.log('Correct!');
@@ -132,21 +132,21 @@ export const brainProgression = () =>{
      return console.log(`Congratulations, ${userName}!`);
    }
    const progression = () => {
-      const numberC = randomInteger(0,9);
+      const randomQwestPosition = randomInteger(0,9);
       const massivGen = () => {
-        const numberA = randomInteger(1,100);
-        const numberB = randomInteger(1,10);
-        var numberD = numberA;
-        var arr = [numberA];
+        const randomStartNumber = randomInteger(1,100);
+        const randomStepValue = randomInteger(1,10);
+        var nextArrIndex = randomStartNumber;
+        var arr = [randomStartNumber];
         for(var i = 0; i <= 8; i++) {
-          numberD += numberB;
-          arr.push(numberD);
+          nextArrIndex += randomStepValue;
+          arr.push(nextArrIndex);
         }
         return arr;
       };
       const raundArray = massivGen();
-      const result = raundArray[numberC];
-      raundArray[numberC] = "..";
+      const result = raundArray[randomQwestPosition];
+      raundArray[randomQwestPosition] = "..";
 console.log(`Question: ${raundArray.join(" ")}`);
 const answer = readlineSync.question('Your answer:');
 if (answer == result) {
@@ -180,13 +180,13 @@ export const brainPrime = () =>{
      return console.log(`Congratulations, ${userName}!`);
    }
    const primeCheck = () => {
-     const numberA = randomInteger(1,100);
-     console.log(`Question: ${numberA}`);
+     const randomNumber = randomInteger(1,100);
+     console.log(`Question: ${randomNumber}`);
      const answer = readlineSync.question('Your answer:');
-      if ((isPrime(numberA) && answer === 'yes') || (!isPrime(numberA) && answer === 'no')) {
+      if ((isPrime(randomNumber) && answer === 'yes') || (!isPrime(randomNumber) && answer === 'no')) {
         return true;
       }
-        const truAnswer = isPrime(numberA) ? "yes" : "no";
+        const truAnswer = isPrime(randomNumber) ? "yes" : "no";
         console.log(`${answer} is wrong answer ;(. Correct answer was ${truAnswer}.\nLet's try again, ${userName}!`);
         return false;
    };
