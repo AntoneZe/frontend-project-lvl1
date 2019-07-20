@@ -9,6 +9,7 @@
 [![asciicast](https://asciinema.org/a/VBB40Fr73kY3Nh7U7lERfKBmW.svg)](https://asciinema.org/a/VBB40Fr73kY3Nh7U7lERfKBmW)
 [![asciicast](https://asciinema.org/a/4CGpFQQcvYW5NS3pNMpsnizuo.svg)](https://asciinema.org/a/4CGpFQQcvYW5NS3pNMpsnizuo)
 [![asciicast](https://asciinema.org/a/bLGTLHwVMtQid5j2DHCr02wx3.svg)](https://asciinema.org/a/bLGTLHwVMtQid5j2DHCr02wx3)
+[![asciicast](https://asciinema.org/a/JvatPSVmwFRa6EEDR4H738OTL.svg)](https://asciinema.org/a/JvatPSVmwFRa6EEDR4H738OTL)
 
 ## Setup
 
