@@ -8,6 +8,7 @@
     "brain-games": "dist/bin/brain-games.js",
     "brain-calc": "dist/bin/game/brain-calc.js",
     "brain-progression": "dist/bin/game/brain-progression.js",
+    "brain-prime": "dist/bin/game/brain-prime.js",
     "brain-even": "dist/bin/game/brain-even.js"
   },
   "files": [

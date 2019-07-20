@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 
+/////////////////////////////////////////////Global/////////////////////////////////////////////////////
  export const questionName = () => {
 	console.log('Welcome to the Brain Games!');
 	const userName = readlineSync.question('May I have your name? ');
@@ -13,9 +14,11 @@ export const randomInteger = (min,max) => {
 	return rand;
 };
 
-/////////////////////////////////////////////game1/////////////////////////////////////////////////////
 
-export const gameOne = () => {
+
+/////////////////////////////////////////////brain-even////////////////////////////////////////////////////
+
+export const brainEven = () => {
   const userName = questionName();
   console.log("Answer \"yes\" if number even otherwise answer \"no\".");
   const iter = (counter) => {
@@ -35,7 +38,7 @@ export const gameOne = () => {
 return iter(0)
 };
 
-/////////////////////////////////////////////game2/////////////////////////////////////////////////////
+/////////////////////////////////////////////brain-calc/////////////////////////////////////////////////////
 
 export const randomOperators = (funct) => {
 switch (funct) {
@@ -61,7 +64,7 @@ export const result = (numA,numB,randomOperators) => {
 	}
 };
 
-export const game3 = () => {
+export const brainCalc = () => {
   const userName = questionName();
   console.log("What is the result of the expression?");
   const iter = (counter) => {
@@ -71,31 +74,31 @@ export const game3 = () => {
   const thisGameOperator = randomOperators(randomInteger(0,2));
   const numberA = randomInteger(0,100);
 	const numberB = randomInteger(0,100);
-  const game1 =  `${numberA} ${thisGameOperator} ${numberB}`;
-  const res = result(numberA,numberB,thisGameOperator);
-  console.log(`Question: ${game1}?`);
+  const thisRaund =  `${numberA} ${thisGameOperator} ${numberB}`;
+  const result = result(numberA,numberB,thisGameOperator);
+  console.log(`Question: ${thisRaund}?`);
   const answer = readlineSync.question('Your answer:');
-		if(answer == res) {
+		if(answer == result) {
 		console.log('Correct!')
 		return iter(counter+1);
 		}
-		else return console.log(`${answer} is wrong answer ;(. Correct answer was ${res}. \nLet's try again, ${userName}!`);
+		else return console.log(`${answer} is wrong answer ;(. Correct answer was ${result}. \nLet's try again, ${userName}!`);
 		}
 		return iter(0);
 };
 
 
-/////////////////////////////////////////////game3/////////////////////////////////////////////////////
+/////////////////////////////////////////////brain-gcd/////////////////////////////////////////////////////
 
-const nod = (x,y) => {
+const gcd = (x,y) => {
   if (x !== 0) {
-    return nod(y%x,x);
+    return gcd(y%x,x);
   } else {
     return y;
   }
 };
 
-export const game4 = () =>{
+export const brainGcd = () =>{
  const userName = questionName();
  console.log("Find the greatest common divisor of given numbers.");
  const iter = (counter) => {
@@ -104,7 +107,7 @@ export const game4 = () =>{
    }
  const numberA = randomInteger(0,100);
  const numberB = randomInteger(0,100);
- const result = nod(numberA,numberB);
+ const result = gcd(numberA,numberB);
  console.log(`Question: ${numberA} ${numberB}`);
  const answer = readlineSync.question('Your answer:');
    if (answer == result) {
@@ -118,17 +121,17 @@ export const game4 = () =>{
 
 
 
-/////////////////////////////////////////////game4/////////////////////////////////////////////////////
+/////////////////////////////////////////////brain-Progression/////////////////////////////////////////////////////
 
 
-export const game5 = () =>{
+export const brainProgression = () =>{
  const userName = questionName();
  console.log("What number is missing in the progression?");
  const iter = (counter) => {
    if (counter === 3) {
      return console.log(`Congratulations, ${userName}!`);
    }
-   const brainpProgression = () => {
+   const progression = () => {
       const numberC = randomInteger(0,9);
       const massivGen = () => {
         const numberA = randomInteger(1,100);
@@ -149,11 +152,45 @@ const answer = readlineSync.question('Your answer:');
 if (answer == result) {
   return true;
 } else {
-console.log(`${answer} is wrong answer ;(. Correct answer was ${result}. \nLet's try again, ${userName}!`);
-return false;
-}
+  console.log(`${answer} is wrong answer ;(. Correct answer was ${result}. \nLet's try again, ${userName}!`);
+  return false;
+  }
 };
-   if (brainpProgression()) {
+   if (progression()) {
+   console.log('Correct!');
+   return iter(counter+1);
+   }
+   }
+   return iter(0);
+};
+
+/////////////////////////////////////////////brain-prime/////////////////////////////////////////////////////
+
+const isPrime = num => {
+    for(let i = 2, s = Math.sqrt(num); i <= s; i++)
+        if(num % i === 0) return false;
+    return num > 1;
+};
+
+export const brainPrime = () =>{
+ const userName = questionName();
+ console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+ const iter = (counter) => {
+   if (counter === 3) {
+     return console.log(`Congratulations, ${userName}!`);
+   }
+   const primeCheck = () => {
+     const numberA = randomInteger(1,100);
+     console.log(`Question: ${numberA}`);
+     const answer = readlineSync.question('Your answer:');
+      if ((isPrime(numberA) && answer === 'yes') || (!isPrime(numberA) && answer === 'no')) {
+        return true;
+      }
+        const truAnswer = isPrime(numberA) ? "yes" : "no";
+        console.log(`${answer} is wrong answer ;(. Correct answer was ${truAnswer}.\nLet's try again, ${userName}!`);
+        return false;
+   };
+   if (primeCheck()) {
    console.log('Correct!');
    return iter(counter+1);
    }
