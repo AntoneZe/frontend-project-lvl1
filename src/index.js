@@ -17,7 +17,7 @@ export const randomInteger = (min,max) => {
 
 
 /////////////////////////////////////////////brain-even////////////////////////////////////////////////////
-
+/*
 export const brainEven = () => {
   const userName = questionName();
   console.log("Answer \"yes\" if number even otherwise answer \"no\".");
@@ -38,8 +38,72 @@ export const brainEven = () => {
 return iter(0)
 };
 
-/////////////////////////////////////////////brain-calc/////////////////////////////////////////////////////
+*/
 
+
+
+/*
+export const gameEngine = (funct) => {
+  const userName = questionName();
+  console.log("Answer \"yes\" if number even otherwise answer \"no\".");
+  const iter = (counter) => {
+    if (counter === 3) {
+      return console.log(`Congratulations, ${userName}!`);
+    }
+      const raund = funct;
+
+      if (raund()) {
+        console.log("correct")
+        return iter(counter + 1);
+      } else {
+        return console.log(` is wrong answer ;(. Correct answer was . \nLet's try again, ${userName}!`);
+      }
+  }
+return iter(0)
+};
+/*
+export const brainEvenBody = () => {
+const randomNum = randomInteger(0,999);
+console.log(`Question: ${randomNum}`);
+const result = randomNum%2 !== 0? "no":"yes";
+const answer = readlineSync.question('Your answer:');
+if (result === answer) {
+return true;
+}
+return false
+};
+*/
+
+export const gameEngine = (funct) => {
+  const userName = questionName();
+  console.log("Answer \"yes\" if number even otherwise answer \"no\".");
+  const iter = (counter) => {
+    if (counter === 3) {
+      return console.log(`Congratulations, ${userName}!`);
+    }
+      const raund = funct;
+      const result = raund();
+      const answer = readlineSync.question('Your answer:');
+      if (result === answer) {
+        console.log("correct")
+        return iter(counter + 1);
+      } else {
+        return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'. \nLet's try again, ${userName}!`);
+      }
+  }
+return iter(0)
+};
+
+export const brainEvenBody = () => {
+const randomNum = randomInteger(0,999);
+console.log(`Question: ${randomNum}`);
+const result = randomNum%2 !== 0? "no":"yes";
+return result;
+};
+
+
+/////////////////////////////////////////////brain-calc/////////////////////////////////////////////////////
+/*
 export const randomOperators = (funct) => {
 switch (funct) {
   case 0:
@@ -63,7 +127,7 @@ export const result = (numA,numB,randomOperators) => {
 	return numA * numB;
 	}
 };
-
+/*
 export const brainCalc = () => {
   const userName = questionName();
   console.log("What is the result of the expression?");
@@ -86,10 +150,12 @@ export const brainCalc = () => {
 		}
 		return iter(0);
 };
+*/
+
 
 
 /////////////////////////////////////////////brain-gcd/////////////////////////////////////////////////////
-
+/*
 const gcd = (x,y) => {
   if (x !== 0) {
     return gcd(y%x,x);
@@ -119,11 +185,11 @@ export const brainGcd = () =>{
    return iter(0);
 };
 
-
+*/
 
 /////////////////////////////////////////////brain-Progression/////////////////////////////////////////////////////
 
-
+/*
 export const brainProgression = () =>{
  const userName = questionName();
  console.log("What number is missing in the progression?");
@@ -163,9 +229,9 @@ if (answer == result) {
    }
    return iter(0);
 };
-
+*/
 /////////////////////////////////////////////brain-prime/////////////////////////////////////////////////////
-
+/*
 const isPrime = num => {
     for(let i = 2, s = Math.sqrt(num); i <= s; i++)
         if(num % i === 0) return false;
@@ -197,3 +263,4 @@ export const brainPrime = () =>{
    }
    return iter(0);
 };
+*/

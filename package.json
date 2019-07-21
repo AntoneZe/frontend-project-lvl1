@@ -1,7 +1,8 @@
 {
   "name": "zinchbg",
   "version": "1.0.1",
-  "description": "",
+  "description": "brain-game project lvl1",
+  "keywords": "brain-game, project",
   "main": "dist/index.js",
   "bin": {
     "brain-gcd": "dist/bin/game/brain-gcd.js",
