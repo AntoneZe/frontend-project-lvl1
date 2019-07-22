@@ -1,4 +1,8 @@
 #!/usr/bin/env node
-import {brainProgression} from '../../index.js';
+import {rule} from '../../utility.js';
+import {gameEngine} from '../../gameEngine.js';
+import {brainProgression} from '../brain-progression.js';
 
-brainProgression();
+const thisRule = rule("What number is missing in the progression?");
+
+gameEngine(thisRule,brainProgression);

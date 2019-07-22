@@ -1,4 +1,8 @@
 #!/usr/bin/env node
-import {brainCalc} from '../../index.js';
+import {rule} from '../../utility.js';
+import {gameEngine} from '../../gameEngine.js';
+import {brainCalc} from '../brain-calc.js';
 
-brainCalc();
+const thisRule = rule("What is the result of the expression?");
+
+gameEngine(thisRule,brainCalc);
