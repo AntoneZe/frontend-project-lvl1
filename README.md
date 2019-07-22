@@ -5,11 +5,13 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
 [![Build Status](https://travis-ci.org/AntoneZe/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/AntoneZe/frontend-project-lvl1)
-[![asciicast](https://asciinema.org/a/gTPR9XBp2ZGVA6FsQ0Spgds7J.svg)](https://asciinema.org/a/gTPR9XBp2ZGVA6FsQ0Spgds7J)
-[![asciicast](https://asciinema.org/a/VBB40Fr73kY3Nh7U7lERfKBmW.svg)](https://asciinema.org/a/VBB40Fr73kY3Nh7U7lERfKBmW)
-[![asciicast](https://asciinema.org/a/4CGpFQQcvYW5NS3pNMpsnizuo.svg)](https://asciinema.org/a/4CGpFQQcvYW5NS3pNMpsnizuo)
-[![asciicast](https://asciinema.org/a/bLGTLHwVMtQid5j2DHCr02wx3.svg)](https://asciinema.org/a/bLGTLHwVMtQid5j2DHCr02wx3)
-[![asciicast](https://asciinema.org/a/JvatPSVmwFRa6EEDR4H738OTL.svg)](https://asciinema.org/a/JvatPSVmwFRa6EEDR4H738OTL)
+
+[![asciicast](https://asciinema.org/a/Ye0DnaMIZGsMNjhHuYCHUUCIh.svg)](https://asciinema.org/a/Ye0DnaMIZGsMNjhHuYCHUUCIh)
+[![asciicast](https://asciinema.org/a/67hy6jxQ067YHFfROswpzO7VM.svg)](https://asciinema.org/a/67hy6jxQ067YHFfROswpzO7VM)
+[![asciicast](https://asciinema.org/a/rnv11UVnREVlllwP29s8PN7J1.svg)](https://asciinema.org/a/rnv11UVnREVlllwP29s8PN7J1)
+[![asciicast](https://asciinema.org/a/RcraPcTQ8xESKa726JJGtKdIj.svg)](https://asciinema.org/a/RcraPcTQ8xESKa726JJGtKdIj)
+[![asciicast](https://asciinema.org/a/vItU2ylxnkxOuV7sJrBpT6uLX.svg)](https://asciinema.org/a/vItU2ylxnkxOuV7sJrBpT6uLX)
+[![asciicast](https://asciinema.org/a/xI3k5rRacjotrzy3ugwZVB67D.svg)](https://asciinema.org/a/xI3k5rRacjotrzy3ugwZVB67D)
 
 ## Setup
 
