@@ -8,8 +8,8 @@ console.log(thisRule);
     if (counter === 3) {
       return console.log(`Congratulations, ${userName}!`);
     }
-      const raund = funct;
-      const result = raund();
+      const round = funct;
+      const result = round();
       const answer = readlineSync.question('Your answer:');
       if (result == answer) {
         console.log("correct")

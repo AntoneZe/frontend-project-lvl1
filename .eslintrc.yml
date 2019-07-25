@@ -8,14 +8,10 @@ globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
 
-parser: babel-eslint  
+parser: babel-eslint
 
-plugins:
-  # https://github.com/jest-community/eslint-plugin-jest
-  - jest
-  
 parserOptions:
- sourceType: "module", 
+ sourceType: "module",
  ecmaVersion: 2018
 
 rules:
