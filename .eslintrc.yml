@@ -3,7 +3,6 @@ env:
   jest: true
 extends:
   - 'airbnb-base'
-  - 'plugin:jest/recommended'
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
@@ -11,12 +10,8 @@ globals:
 parser: babel-eslint
 
 plugins:
-  # https://github.com/jest-community/eslint-plugin-jest
-  - jest
-
-parserOptions:
- sourceType: "module",
- ecmaVersion: 2018
+  # https://github.com/babel/eslint-plugin-babel
+  - babel
 
 rules:
   no-console: 0
