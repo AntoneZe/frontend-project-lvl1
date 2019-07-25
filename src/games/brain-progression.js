@@ -7,21 +7,21 @@ export const thisRule = rule("What number is missing in the progression?");
 
 export const brainProgression = () => {
 	const randomQwestPosition = randomInteger(0,9);
-	const massivGen = () => {
+	const progressionGenerator = () => {
 		const randomStartNumber = randomInteger(1,100);
 		const randomStepValue = randomInteger(1,10);
-		var nextArrIndex = randomStartNumber;
-		var arr = [randomStartNumber];
+		var nextProgressionIndex = randomStartNumber;
+		var progression = [randomStartNumber];
 			for(var i = 0; i <= 8; i++) {
-			nextArrIndex += randomStepValue;
-			arr.push(nextArrIndex);
+			nextProgressionIndex += randomStepValue;
+			progression.push(nextProgressionIndex);
 		}
-		return arr;
+		return progression;
 	};
-	const raundArray = massivGen();
-	const result = raundArray[randomQwestPosition];
-	raundArray[randomQwestPosition] = "..";
-	console.log(`Question: ${raundArray.join(" ")}`);
+	const thisRoundProgression = progressionGenerator();
+	const result = thisRoundProgression[randomQwestPosition];
+	thisRoundProgression[randomQwestPosition] = "..";
+	console.log(`Question: ${thisRoundProgression.join(" ")}`);
 	return result;
 };
 

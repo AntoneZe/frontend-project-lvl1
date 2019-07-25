@@ -2,4 +2,4 @@
 
 import gameEngine from '../games/brain-calc.js';
 
-gameEngine();
+gameEngine;
