@@ -1,22 +1,23 @@
 import readlineSync from 'readline-sync';
-import {questionName} from './utility.js';
+import { questionName } from './utility';
 
-export const gameEngine = (thisRule,funct) => {
+const gameEngine = (thisRule, funct) => {
   const userName = questionName();
-console.log(thisRule);
+  console.log(thisRule);
   const iter = (counter) => {
     if (counter === 3) {
       return console.log(`Congratulations, ${userName}!`);
     }
-      const round = funct;
-      const result = round();
-      const answer = readlineSync.question('Your answer:');
-      if (result == answer) {
-        console.log("correct")
-        return iter(counter + 1);
-      } else {
-        return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'. \nLet's try again, ${userName}!`);
-      }
-  }
-return iter(0)
+    const round = funct;
+    const result = round();
+    const answer = readlineSync.question('Your answer:');
+    if (String(result) === answer) {
+      console.log('correct');
+      return iter(counter + 1);
+    }
+    return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'. \nLet's try again, ${userName}!`);
+  };
+  return iter(0);
 };
+
+export default gameEngine;
