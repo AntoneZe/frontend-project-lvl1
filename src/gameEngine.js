@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
-import { questionName } from './utility';
+import { getName } from './utility';
 
 const gameEngine = (thisRule, funct) => {
-  const userName = questionName();
+  const userName = getName();
   console.log(thisRule);
   const iter = (counter) => {
     if (counter === 3) {
