@@ -31,13 +31,14 @@
     "readline-sync": "^1.4.9"
   },
   "dependencies": {
-    "cross-env": "^5.2.0",
-    "readline-sync": "^1.4.9",
-    "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.4",
     "@babel/node": "^7.5.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
     "@babel/preset-env": "^7.5.4",
-    "@babel/preset-flow": "^7.0.0"
+    "@babel/preset-flow": "^7.0.0",
+    "@hexlet/pairs": "^1.0.10",
+    "cross-env": "^5.2.0",
+    "readline-sync": "^1.4.9"
   }
 }

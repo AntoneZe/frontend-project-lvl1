@@ -1,25 +1,24 @@
-#!/usr/bin/env node
-import { randomInteger, rule } from '../utility';
+import { cons } from '@hexlet/pairs';
+import generateRandomNumber from '../utility';
 import gameEngine from '../gameEngine';
 
-export const thisRule = rule('Answer "yes" if given number is prime. Otherwise answer "no"');
-
-
-export const isPrime = (num) => {
+const primeCheck = (num) => {
   for (let i = 2, s = Math.sqrt(num); i <= s; i + 1) {
     if (num % i === 0) {
-      return false;
+      return 'no';
     }
-    return num > 1;
+    return 'yes';
   }
   return 'end';
 };
 
-export const brainPrime = () => {
-  const randomNumber = randomInteger(1, 100);
-  console.log(`Question: ${randomNumber}`);
-  const result = isPrime(randomNumber) ? 'yes' : 'no';
-  return result;
+const brainGamePrimeBody = () => {
+  const currentNum = generateRandomNumber(1, 100);
+  const dataForQuestion = `${currentNum}`;
+  const correctAnswer = primeCheck(currentNum);
+  return cons(dataForQuestion, correctAnswer);
 };
 
-export default () => gameEngine(thisRule, brainPrime);
+const brainGamePrimeRule = 'Answer \'yes\' if given number is prime, otherwise answer \'no\'.';
+
+export default () => gameEngine(brainGamePrimeBody, brainGamePrimeRule);

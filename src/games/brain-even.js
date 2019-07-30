@@ -1,21 +1,17 @@
-#!/usr/bin/env node
-import { randomInteger, rule } from '../utility';
+import { cons } from '@hexlet/pairs';
+import generateRandomNumber from '../utility';
 import gameEngine from '../gameEngine';
 
 
-export const thisRule = rule('Answer \'yes\' if number even otherwise answer \'no\'.');
+const isEven = num => ((num % 2 !== 0) ? 'no' : 'yes');
 
-
-export const isEven = (number) => {
-  const result = number % 2 !== 0 ? 'no' : 'yes';
-  return result;
+const brainGameEvenBody = () => {
+  const currentNum = generateRandomNumber(1, 100);
+  const dataForQuestion = `${currentNum}`;
+  const correctAnswer = isEven(currentNum);
+  return cons(dataForQuestion, correctAnswer);
 };
 
-export const brainEven = () => {
-  const randomNum = randomInteger(0, 999);
-  console.log(`Question: ${randomNum}`);
-  const result = isEven(randomNum);
-  return result;
-};
+const brainGameEvenRule = 'Answer \'yes\' if number even, otherwise answer \'no\'.';
 
-export default () => gameEngine(thisRule, brainEven);
+export default () => gameEngine(brainGameEvenBody, brainGameEvenRule);

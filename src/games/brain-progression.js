@@ -1,28 +1,24 @@
-#!/usr/bin/env node
-import { randomInteger, rule } from '../utility';
+import { cons } from '@hexlet/pairs';
+import generateRandomNumber from '../utility';
 import gameEngine from '../gameEngine';
 
-export const thisRule = rule('What number is missing in the progression?');
-
-export const brainProgression = () => {
-  const randomQwestPosition = randomInteger(0, 9);
-  const progressionGenerator = () => {
-    const randomStartNumber = randomInteger(1, 100);
-    const randomStepValue = randomInteger(1, 10);
-    let nextProgressionIndex = randomStartNumber;
-    const progression = [randomStartNumber];
-    for (let i = 0; i <= 8;) {
-      nextProgressionIndex += randomStepValue;
-      progression.push(nextProgressionIndex);
-      i += 1;
+const brainGameProgressionBody = () => {
+  const progressionLength = 10;
+  const startProgression = generateRandomNumber(0, 100);
+  const diffProgression = generateRandomNumber(1, 10);
+  const missingStep = generateRandomNumber(1, 10);
+  let dataForQuestion = '';
+  for (let i = 1; i <= progressionLength; i += 1) {
+    if (i === missingStep) {
+      dataForQuestion = `${dataForQuestion} ..`;
+    } else {
+      dataForQuestion = `${dataForQuestion} ${startProgression + diffProgression * i}`;
     }
-    return progression;
-  };
-  const thisRoundProgression = progressionGenerator();
-  const result = thisRoundProgression[randomQwestPosition];
-  thisRoundProgression[randomQwestPosition] = '..';
-  console.log(`Question: ${thisRoundProgression.join(' ')}`);
-  return result;
+  }
+  const correctAnswer = `${startProgression + diffProgression * missingStep}`;
+  return cons(dataForQuestion, correctAnswer);
 };
 
-export default () => gameEngine(thisRule, brainProgression);
+const brainGameProgressionRule = 'What number is missing in the progression?';
+
+export default () => gameEngine(brainGameProgressionBody, brainGameProgressionRule);

@@ -1,21 +1,25 @@
 import readlineSync from 'readline-sync';
-import { getName } from './utility';
+import { car, cdr } from '@hexlet/pairs';
 
-const gameEngine = (thisRule, funct) => {
-  const userName = getName();
-  console.log(thisRule);
+const gameEngine = (gameBody, gameRule) => {
+  console.log('Welcome to the Bain Games!');
+  const userName = readlineSync.question('May i have you name? ');
+  console.log(`Hello ${userName}`);
+  console.log(gameRule);
   const iter = (counter) => {
     if (counter === 3) {
-      return console.log(`Congratulations, ${userName}!`);
+      return console.log(`Congratulations, ${userName}`);
     }
-    const round = funct;
-    const result = round();
-    const answer = readlineSync.question('Your answer:');
-    if (String(result) === answer) {
+    const roundBody = gameBody();
+    console.log(`Question: ${car(roundBody)}`);
+    const corectAnswer = cdr(roundBody);
+    const userAnswer = readlineSync.question('Your answer:');
+    if (String(corectAnswer) === userAnswer) {
       console.log('correct');
       return iter(counter + 1);
     }
-    return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'. \nLet's try again, ${userName}!`);
+    console.log(`${userAnswer} is wrong answer. Correct answer was ${corectAnswer}. \nLet's try again, ${userName}!`);
+    return false;
   };
   return iter(0);
 };

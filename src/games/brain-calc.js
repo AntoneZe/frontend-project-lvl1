@@ -1,41 +1,33 @@
-#!/usr/bin/env node
-import { randomInteger, rule } from '../utility';
+import { cons } from '@hexlet/pairs';
+import generateRandomNumber from '../utility';
 import gameEngine from '../gameEngine';
 
-export const thisRule = rule('What is the result of the expression?');
 
-export const randomOperators = () => {
-  const substraction = 1;
-  const addition = 2;
-  const multiplication = 3;
-  switch (randomInteger(substraction, multiplication)) {
-    case substraction:
-      return '-';
-    case addition:
-      return '+';
-    case multiplication:
-      return '*';
-    default:
-      return console.log('Woops');
-  }
-};
-
-export const brainCalc = () => {
-  const randomNumberOne = randomInteger(1, 100);
-  const randomNumberTwo = randomInteger(1, 100);
-  switch (randomOperators()) {
+const brainGameCalcBody = () => {
+  const firstCalcNum = generateRandomNumber(1, 100);
+  const secondCalcNum = generateRandomNumber(1, 100);
+  const randomOperator = '+-*';
+  let dataForQuestion;
+  let correctAnswer;
+  switch (randomOperator[generateRandomNumber(0, 2)]) {
     case '+':
-      console.log(`Question: ${randomNumberOne} + ${randomNumberTwo}`);
-      return randomNumberOne + randomNumberTwo;
+      dataForQuestion = `${firstCalcNum} + ${secondCalcNum}`;
+      correctAnswer = firstCalcNum + secondCalcNum;
+      break;
     case '-':
-      console.log(`Question: ${randomNumberOne} - ${randomNumberTwo}`);
-      return randomNumberOne - randomNumberTwo;
+      dataForQuestion = `${firstCalcNum} - ${secondCalcNum}`;
+      correctAnswer = firstCalcNum - secondCalcNum;
+      break;
     case '*':
-      console.log(`Question: ${randomNumberOne} * ${randomNumberTwo}`);
-      return randomNumberOne * randomNumberTwo;
+      dataForQuestion = `${firstCalcNum} * ${secondCalcNum}`;
+      correctAnswer = firstCalcNum * secondCalcNum;
+      break;
     default:
-      return console.log('Woops');
+      break;
   }
+  return cons(dataForQuestion, correctAnswer);
 };
 
-export default () => gameEngine(thisRule, brainCalc);
+const brainGameCalcRule = 'What is the result of the expression?';
+
+export default () => gameEngine(brainGameCalcBody, brainGameCalcRule);
