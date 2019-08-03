@@ -2,12 +2,8 @@ env:
   node: true
 extends:
   - 'airbnb-base'
-globals:
-  Atomics: readonly
-  SharedArrayBuffer: readonly
 
 parser: babel-eslint
-
 
 plugins:
   # https://github.com/babel/eslint-plugin-babel
