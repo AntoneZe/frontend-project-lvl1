@@ -3,29 +3,35 @@ import { car, cdr } from '@hexlet/pairs';
 
 
 const numberOfRounds = 3;
+const numberOfFirsRound = 1;
+
+const playerWin = (round, data) => {
+  const getGameData = data();
+  const corectAnswer = cdr(getGameData);
+  console.log(`Question: ${car(getGameData)}`);
+  const userAnswer = readlineSync.question('Your answer:');
+  if (round === numberOfRounds) {
+    return true;
+  }
+  if (corectAnswer === userAnswer) {
+    console.log('correct');
+    return playerWin(round + 1, data);
+  }
+  console.log(`${userAnswer} is wrong answer. Correct answer was ${corectAnswer}.`);
+  return false;
+};
+
 
 const gameEngine = (gameData, gameRule) => {
   console.log('Welcome to the Bain Games!');
   const userName = readlineSync.question('May i have you name? ');
   console.log(`Hello ${userName}`);
   console.log(gameRule);
-  const iter = (counter) => {
-    if (counter === numberOfRounds) {
-      console.log(`Congratulations, ${userName}`);
-      return true;
-    }
-    const roundData = gameData();
-    console.log(`Question: ${car(roundData)}`);
-    const corectAnswer = cdr(roundData);
-    const userAnswer = readlineSync.question('Your answer:');
-    if (corectAnswer === userAnswer) {
-      console.log('correct');
-      return iter(counter + 1);
-    }
-    console.log(`${userAnswer} is wrong answer. Correct answer was ${corectAnswer}.`);
+  if (playerWin(numberOfFirsRound, gameData)) {
+    console.log(`Congratulations, ${userName}`);
+  } else {
     console.log(`Let's try again, ${userName}!`);
-  };
-  return iter(0);
+  }
 };
 
 export default gameEngine;
