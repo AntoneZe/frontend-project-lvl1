@@ -16,8 +16,7 @@ $ npm install -g zinchbg
 ```
 [![asciicast](https://asciinema.org/a/Ye0DnaMIZGsMNjhHuYCHUUCIh.svg)](https://asciinema.org/a/Ye0DnaMIZGsMNjhHuYCHUUCIh)
 ## Игра 'Простое ли число?'
-#### Суть игры в следующем: необходимо указать является ли число простым. Отвечайте 'yes' если число простое, 'no' если нет.
-#### Запуск:
+ Суть игры в следующем: необходимо указать является ли число простым. Отвечайте 'yes' если число простое, 'no' если нет. Запуск:
 ```sh
 $ brain-prime
 ```

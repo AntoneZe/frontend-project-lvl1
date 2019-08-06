@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
 
-
 const numberOfRounds = 3;
 const numberOfFirsRound = 1;
 
