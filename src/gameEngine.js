@@ -4,7 +4,7 @@ import { car, cdr } from '@hexlet/pairs';
 const numberOfRounds = 3;
 const numberOfFirsRound = 1;
 
-const playerWin = (round, data) => {
+const isPlayerWin = (round, data) => {
   const getGameData = data();
   const corectAnswer = cdr(getGameData);
   console.log(`Question: ${car(getGameData)}`);
@@ -14,7 +14,7 @@ const playerWin = (round, data) => {
   }
   if (corectAnswer === userAnswer) {
     console.log('correct');
-    return playerWin(round + 1, data);
+    return isPlayerWin(round + 1, data);
   }
   console.log(`${userAnswer} is wrong answer. Correct answer was ${corectAnswer}.`);
   return false;
@@ -26,7 +26,7 @@ const gameEngine = (gameData, gameRule) => {
   const userName = readlineSync.question('May i have you name? ');
   console.log(`Hello ${userName}`);
   console.log(gameRule);
-  if (playerWin(numberOfFirsRound, gameData)) {
+  if (isPlayerWin(numberOfFirsRound, gameData)) {
     console.log(`Congratulations, ${userName}`);
   } else {
     console.log(`Let's try again, ${userName}!`);
