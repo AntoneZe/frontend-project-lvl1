@@ -6,17 +6,17 @@ const numberOfFirsRound = 1;
 
 const isPlayerWin = (round, data) => {
   const getGameData = data();
-  const corectAnswer = cdr(getGameData);
+  const correctAnswer = cdr(getGameData);
   console.log(`Question: ${car(getGameData)}`);
   const userAnswer = readlineSync.question('Your answer:');
   if (round === numberOfRounds) {
     return true;
   }
-  if (corectAnswer === userAnswer) {
+  if (correctAnswer === userAnswer) {
     console.log('correct');
     return isPlayerWin(round + 1, data);
   }
-  console.log(`${userAnswer} is wrong answer. Correct answer was ${corectAnswer}.`);
+  console.log(`${userAnswer} is wrong answer. Correct answer was ${correctAnswer}.`);
   return false;
 };
 
@@ -32,5 +32,6 @@ const gameEngine = (gameData, gameRule) => {
     console.log(`Let's try again, ${userName}!`);
   }
 };
+
 
 export default gameEngine;
