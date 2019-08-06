@@ -11,7 +11,8 @@ const gameEngine = (gameData, gameRule) => {
   console.log(gameRule);
   const iter = (counter) => {
     if (counter === numberOfRounds) {
-      return console.log(`Congratulations, ${userName}`);
+      console.log(`Congratulations, ${userName}`);
+      return true;
     }
     const roundData = gameData();
     console.log(`Question: ${car(roundData)}`);
@@ -23,7 +24,6 @@ const gameEngine = (gameData, gameRule) => {
     }
     console.log(`${userAnswer} is wrong answer. Correct answer was ${corectAnswer}.`);
     console.log(`Let's try again, ${userName}!`);
-    return false;
   };
   return iter(0);
 };

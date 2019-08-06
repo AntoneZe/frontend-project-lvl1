@@ -24,8 +24,8 @@ const getCalcData = () => {
     default:
       break;
   }
-  const dataForQuestion = `${firstValue} ${raundOperator} ${secondValue}`;
-  return cons(dataForQuestion, String(correctAnswer));
+  const question = `${firstValue} ${raundOperator} ${secondValue}`;
+  return cons(question, String(correctAnswer));
 };
 
 const calcTask = 'What is the result of the expression?';

@@ -9,15 +9,15 @@ const getProgressionData = () => {
   const diff = generateRandomNumber(1, 10);
   const missingIndex = generateRandomNumber(1, progressionLength);
   let dataForQuestion = '';
-  for (let i = 1; i <= progressionLength; i += 1) {
+  for (let i = 0; i <= progressionLength; i += 1) {
     if (i === missingIndex) {
-      dataForQuestion = `${dataForQuestion}_..`;
+      dataForQuestion = `${dataForQuestion} ..`;
     } else {
-      dataForQuestion = `${dataForQuestion}_${start + diff * i}`;
+      dataForQuestion = `${dataForQuestion} ${start + diff * i}`;
     }
   }
   const correctAnswer = `${start + diff * missingIndex}`;
-  return cons(dataForQuestion, correctAnswer);
+  return cons(dataForQuestion.trim(), correctAnswer);
 };
 
 const progressionTask = 'What number is missing in the progression?';
