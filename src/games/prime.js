@@ -3,21 +3,23 @@ import generateRandomNumber from '../utility';
 import gameEngine from '../gameEngine';
 
 const isPrime = (num) => {
+  let result = null;
   for (let i = 2, s = Math.sqrt(num); i <= s; i + 1) {
     if (num % i === 0) {
-      return false;
+      result = true;
+      break;
     }
-    return true;
+    result = false;
+    break;
   }
-  return 'end';
+  return result;
 };
 
 const getPrimeData = () => {
-  const currentNum = generateRandomNumber(1, 100);
-  const dataForQuestion = currentNum;
-  const isPrimeToAnswer = (isPrime(currentNum) ? 'yes' : 'no');
+  const question = generateRandomNumber(1, 100);
+  const isPrimeToAnswer = (isPrime(question) ? 'yes' : 'no');
   const correctAnswer = isPrimeToAnswer;
-  return cons(dataForQuestion, correctAnswer);
+  return cons(question, correctAnswer);
 };
 
 const primeTask = 'Answer \'yes\' if given number is prime, otherwise answer \'no\'.';

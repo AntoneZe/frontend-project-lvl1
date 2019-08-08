@@ -10,11 +10,11 @@ const findGd = (x, y) => {
 };
 
 const getGcdData = () => {
-  const firstNum = generateRandomNumber(1, 100);
-  const secondNum = generateRandomNumber(1, 100);
-  const dataForQuestion = `${firstNum} ${secondNum}`;
-  const correctAnswer = findGd(firstNum, secondNum);
-  return cons(dataForQuestion, String(correctAnswer));
+  const a = generateRandomNumber(1, 100);
+  const b = generateRandomNumber(1, 100);
+  const question = `${a} ${b}`;
+  const correctAnswer = findGd(a, b);
+  return cons(question, String(correctAnswer));
 };
 
 const gcdTask = 'Find the greatest common divisior of given numbers';

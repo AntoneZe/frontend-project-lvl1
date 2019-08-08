@@ -8,16 +8,16 @@ const getProgressionData = () => {
   const start = generateRandomNumber(0, 100);
   const diff = generateRandomNumber(1, 10);
   const missingIndex = generateRandomNumber(1, progressionLength);
-  let dataForQuestion = '';
+  let question = '';
   for (let i = 0; i <= progressionLength; i += 1) {
     if (i === missingIndex) {
-      dataForQuestion = `${dataForQuestion} ..`;
+      question = `${question} ..`;
     } else {
-      dataForQuestion = `${dataForQuestion} ${start + diff * i}`;
+      question = `${question} ${start + diff * i}`;
     }
   }
   const correctAnswer = `${start + diff * missingIndex}`;
-  return cons(dataForQuestion.trim(), correctAnswer);
+  return cons(question.trim(), correctAnswer);
 };
 
 const progressionTask = 'What number is missing in the progression?';
