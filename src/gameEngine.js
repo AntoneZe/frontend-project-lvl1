@@ -1,34 +1,32 @@
 import readlineSync from 'readline-sync';
-import { car, cdr, cons } from '@hexlet/pairs';
+import { car, cdr } from '@hexlet/pairs';
 
-const roundsCounter = 3;
+const roundsCount = 3;
 
-const gameEngine = (getGameData, gameRule) => {
+const gameEngine = (getGameData, gameDescription) => {
   console.log('Welcome to the Bain Games!');
   const userName = readlineSync.question('May i have you name? ');
   console.log(`Hello ${userName}`);
-  console.log(gameRule);
+  console.log(gameDescription);
   const iter = (counter) => {
-    if (counter === roundsCounter) {
-      return true;
-    }
     const gameData = getGameData();
-    console.log(`Question: ${car(gameData)}`);
+    const question = car(gameData);
     const correctAnswer = cdr(gameData);
-    const userAnswer = readlineSync.question('Your answer:');
-    if (correctAnswer !== userAnswer) {
-      return cons(userAnswer, correctAnswer);
+    if (counter === roundsCount) {
+      console.log(`Congratulations, ${userName}`);
+    } else {
+      console.log(`Question: ${question}`);
+      const userAnswer = readlineSync.question('Your answer:');
+      if (correctAnswer !== userAnswer) {
+        console.log(`${userAnswer} is wrong answer. Correct answer was ${correctAnswer}.`);
+        console.log(`Let's try again, ${userName}!`);
+      } else {
+        console.log('correct');
+        iter(counter + 1);
+      }
     }
-    console.log('correct');
-    return iter(counter + 1);
   };
-  const gameResult = (iter(0));
-  if (gameResult === true) {
-    console.log(`Congratulations, ${userName}`);
-  } else {
-    console.log(`${car(gameResult)} is wrong answer. Correct answer was ${cdr(gameResult)}.`);
-    console.log(`Let's try again, ${userName}!`);
-  }
+  return iter(0);
 };
 
 export default gameEngine;

@@ -3,15 +3,14 @@ import generateRandomNumber from '../utility';
 import gameEngine from '../gameEngine';
 
 const operators = '+-*';
-const minOperatorsIndex = 0;
-const maxOperatorsIndex = 2;
+const maxOperatorsIndex = operators.length - 1;
 
 const getCalcData = () => {
   const firstValue = generateRandomNumber(1, 100);
   const secondValue = generateRandomNumber(1, 100);
   let correctAnswer;
-  const raundOperator = operators[generateRandomNumber(minOperatorsIndex, maxOperatorsIndex)];
-  switch (raundOperator) {
+  const operator = operators[generateRandomNumber(0, maxOperatorsIndex)];
+  switch (operator) {
     case '+':
       correctAnswer = firstValue + secondValue;
       break;
@@ -24,7 +23,7 @@ const getCalcData = () => {
     default:
       break;
   }
-  const question = `${firstValue} ${raundOperator} ${secondValue}`;
+  const question = `${firstValue} ${operator} ${secondValue}`;
   return cons(question, String(correctAnswer));
 };
 

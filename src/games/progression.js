@@ -16,7 +16,7 @@ const getProgressionData = () => {
       question = `${question} ${start + diff * i}`;
     }
   }
-  const correctAnswer = `${start + diff * missingIndex}`;
+  const correctAnswer = (start + diff * missingIndex).toString();
   return cons(question.trim(), correctAnswer);
 };
 

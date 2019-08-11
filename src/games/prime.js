@@ -3,22 +3,18 @@ import generateRandomNumber from '../utility';
 import gameEngine from '../gameEngine';
 
 const isPrime = (num) => {
-  let result = null;
-  for (let i = 2, s = Math.sqrt(num); i <= s; i + 1) {
+  for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i + 1) {
     if (num % i === 0) {
-      result = true;
-      break;
+      return false;
     }
-    result = false;
-    break;
+    return true;
   }
-  return result;
+  return false;
 };
 
 const getPrimeData = () => {
-  const question = generateRandomNumber(1, 100);
-  const isPrimeToAnswer = (isPrime(question) ? 'yes' : 'no');
-  const correctAnswer = isPrimeToAnswer;
+  const question = generateRandomNumber(-100, 100);
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return cons(question, correctAnswer);
 };
 
