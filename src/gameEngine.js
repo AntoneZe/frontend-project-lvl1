@@ -25,6 +25,7 @@ const gameEngine = (getGameData, gameDescription) => {
     console.log('Correct');
     return iter(counter + 1);
   };
+  return iter(0);
 };
 
 export default gameEngine;
