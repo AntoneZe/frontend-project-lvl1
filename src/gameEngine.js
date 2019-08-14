@@ -14,18 +14,19 @@ const gameEngine = (getGameData, gameDescription) => {
     const correctAnswer = cdr(gameData);
     if (counter === roundsCount) {
       console.log(`Congratulations, ${userName}`);
+      return true;
     }
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer:');
     if (correctAnswer !== userAnswer) {
       console.log(`${userAnswer} is wrong answer. Correct answer was ${correctAnswer}.`);
       console.log(`Let's try again, ${userName}!`);
-      return iter(0);
+      return false;
     }
     console.log('Correct');
     return iter(counter + 1);
   };
-  return iter(0);
+  iter(0);
 };
 
 export default gameEngine;
