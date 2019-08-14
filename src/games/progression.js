@@ -7,16 +7,12 @@ const progressionLength = 10;
 const getProgressionData = () => {
   const start = generateRandomNumber(0, 100);
   const diff = generateRandomNumber(1, 10);
-  const missingIndex = generateRandomNumber(1, progressionLength);
+  const missingElementIndex = generateRandomNumber(0, progressionLength - 1);
   let question = '';
   for (let i = 0; i <= progressionLength; i += 1) {
-    if (i === missingIndex) {
-      question = `${question} ..`;
-    } else {
-      question = `${question} ${start + diff * i}`;
-    }
+    question = (i === missingElementIndex ? `${question} ..` : `${question} ${start + diff * i}`);
   }
-  const correctAnswer = (start + diff * missingIndex).toString();
+  const correctAnswer = (start + diff * missingElementIndex).toString();
   return cons(question.trim(), correctAnswer);
 };
 

@@ -3,13 +3,12 @@ import generateRandomNumber from '../utility';
 import gameEngine from '../gameEngine';
 
 const operators = '+-*';
-const maxOperatorsIndex = operators.length - 1;
 
 const getCalcData = () => {
   const firstValue = generateRandomNumber(1, 100);
   const secondValue = generateRandomNumber(1, 100);
   let correctAnswer;
-  const operator = operators[generateRandomNumber(0, maxOperatorsIndex)];
+  const operator = operators[generateRandomNumber(0, operators.length - 1)];
   switch (operator) {
     case '+':
       correctAnswer = firstValue + secondValue;
