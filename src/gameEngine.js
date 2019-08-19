@@ -9,13 +9,13 @@ const gameEngine = (getGameData, gameDescription) => {
   console.log(`Hello ${userName}`);
   console.log(gameDescription);
   const iter = (counter) => {
-    const gameData = getGameData();
-    const question = car(gameData);
-    const correctAnswer = cdr(gameData);
     if (counter === roundsCount) {
       console.log(`Congratulations, ${userName}`);
       return;
     }
+    const gameData = getGameData();
+    const question = car(gameData);
+    const correctAnswer = cdr(gameData);
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer:');
     if (correctAnswer !== userAnswer) {
