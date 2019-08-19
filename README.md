@@ -1,3 +1,6 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/7506fc2b4060ea79c4db/maintainability)](https://codeclimate.com/github/AntoneZe/frontend-project-lvl1/maintainability)
+[![Build Status](https://travis-ci.org/AntoneZe/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/AntoneZe/frontend-project-lvl1)
+
 # Проект 'Игры разума'
  Проект представляет из себя сборник из пяти математических игр. Целью данного проекта являться закрепление следующих навыков:
 - настройка рабочей среды;
@@ -7,12 +10,9 @@
 - получение опыта по написанию чистого кода.
 # brain-games
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/7506fc2b4060ea79c4db/maintainability)](https://codeclimate.com/github/AntoneZe/frontend-project-lvl1/maintainability)
-[![Build Status](https://travis-ci.org/AntoneZe/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/AntoneZe/frontend-project-lvl1)
-
 ## УСТАНОВКА
 ```sh
-$ npm install -g zinchbg
+$ npm link
 ```
 [![asciicast](https://asciinema.org/a/Ye0DnaMIZGsMNjhHuYCHUUCIh.svg)](https://asciinema.org/a/Ye0DnaMIZGsMNjhHuYCHUUCIh)
 ## Игра 'Простое ли число?'
